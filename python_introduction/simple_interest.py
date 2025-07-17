@@ -1,5 +1,5 @@
-principle = 1000
-rate = 0.05
-time = 3
-simple_interest = principle * rate * time
-print("The simple interest is:",simple_interest)
+P = 1000
+R = 0.005
+T = 3
+I = P * R * T
+print("The simple interest is:", I)

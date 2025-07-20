@@ -20,4 +20,4 @@ match operation:
             result_message = "cannot divide by zero."
     case _:
         result_message = "Error: Invalid operation chosen."
-        print(result_message)
+print(result_message)        

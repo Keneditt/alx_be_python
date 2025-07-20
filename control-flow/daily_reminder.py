@@ -7,8 +7,8 @@ while True:
         print("Invalid priority. Please enter 'low', 'medium', or 'high'.")
 while True:
     time_bound_input = input("Is this task time-bound? (yes/no): ").lower()
-reminder = ""
-match task_priority:
+reminder = ""               
+match task_priority:    
     case 'medium':
         reminder = f"Reminder:{task_description} has a medium priority level."
     case 'high':
@@ -20,9 +20,8 @@ match task_priority:
 if time_bound_input:
     reminder += "that requires immediate attention today!"
 reminder += "."
-print("n--- Task Reminder ---")
+
 print(reminder)
-print("-------------")    
 
 
 

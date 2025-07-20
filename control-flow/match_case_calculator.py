@@ -6,15 +6,19 @@ match operation:
     case "+":
         calculated_result = num1 + num2
         result_message = f"The result of {num1} + {num2} is {calculated_result}."
+        print(f"The result of {num1} + {num2} is {calculated_result}.")
     case "-":
         calculated_result = num1 - num2
         result_message = f"The result of {num1} - {num2} is {calculated_result}."
+        print(f"The result of {num1} - {num2} is {calculated_result}.")
     case "*":
         calculated_result = num1 * num2 
+        print(f"The result of {num1} * {num2} is {calculated_result}.")
     case "/":
         if num2 != 0:
             calculated_result = num1 / num2
-            result_message = f"The result of {num1} / {num2} is {calculated_result}."
+            result_message = f"The result of {num1} / {num2} is {calculated_result}." 
+            print(f"The result of {num1} / {num2} is {calculated_result}.")
         else:
             result_message = "cannot divide by zero."
     case _:

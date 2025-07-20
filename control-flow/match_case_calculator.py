@@ -20,7 +20,7 @@ match operation:
             result_message = f"The result of {num1} / {num2} is {calculated_result}." 
             print(f"The result of {num1} / {num2} is {calculated_result}.")
         else:
-            result_message = "cannot divide by zero."
+            result_message = "Cannot divide by zero."
     case _:
         result_message = "Error: Invalid operation chosen."
 print(result_message)        

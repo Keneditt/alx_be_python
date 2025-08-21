@@ -1,4 +1,3 @@
-
 def display_menu():
     print("Shopping List Manager")
     print("1. Add Item")
@@ -28,13 +27,14 @@ def main():
             # Prompt for and remove an item
             if not shopping_list:
                 print("Your shopping list is empty!")
+                continue
+                
+            item = input("Enter item to remove: ").strip()
+            if item in shopping_list:
+                shopping_list.remove(item)
+                print(f"'{item}' removed from the list.")
             else:
-                item = input("Enter item to remove: ").strip()
-                if item in shopping_list:
-                    shopping_list.remove(item)
-                    print(f"'{item}' removed from the list.")
-                else:
-                    print(f"'{item}' not found in the list.")
+                print(f"'{item}' not found in the list.")
                     
         elif choice == '3':
             # Display the shopping list
@@ -42,8 +42,8 @@ def main():
                 print("Your shopping list is empty!")
             else:
                 print("\nYour Shopping List:")
-                for item in shopping_list:
-                    print(f" - {item}")
+                for i, item in enumerate(shopping_list, 1):
+                    print(f"{i}. {item}")
                     
         elif choice == '4':
             print("Goodbye!")
@@ -55,5 +55,4 @@ def main():
         print()  # Add empty line for better readability
 
 if __name__ == "__main__":
-    main()  
-            
+    main()

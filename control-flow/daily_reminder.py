@@ -1,25 +1,20 @@
 def main():
-    # Prompt for task information with clear instructions
-    task = input("Enter your task: ").strip()
+    # Prompt for task information
+    task = input("Enter your task: ")
     
-    # Validate that task is not empty
-    while not task:
-        print("Task cannot be empty. Please enter a valid task.")
-        task = input("Enter your task: ").strip()
-    
-    # Get priority with clear validation
+    # Get priority with validation
     while True:
-        priority = input("Enter task priority (high/medium/low): ").lower().strip()
+        priority = input("Priority (high/medium/low): ").lower()
         if priority in ['high', 'medium', 'low']:
             break
-        print("Invalid priority. Please enter 'high', 'medium', or 'low'.")
+        print("Invalid priority. Please enter high, medium, or low.")
     
-    # Get time-bound status with clear validation
+    # Get time-bound status with validation
     while True:
-        time_bound = input("Is this task time-bound? (yes/no): ").lower().strip()
+        time_bound = input("Is it time-bound? (yes/no): ").lower()
         if time_bound in ['yes', 'no']:
             break
-        print("Invalid response. Please enter 'yes' or 'no'.")
+        print("Invalid response. Please enter yes or no.")
     
     # Generate reminder using match-case and if statements
     match priority:

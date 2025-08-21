@@ -1,25 +1,26 @@
-# main.py
-from arithmetic_operations import perform_operation
-
-def main():
-    print("Arithmetic Operations")
+def perform_operation(num1, num2, operation):
+    """
+    Performs basic arithmetic operations on two numbers.
     
-    try:
-        num1 = float(input("Enter the first number: "))
-        num2 = float(input("Enter the second number: "))
-        operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    Args:
+        num1: First operand
+        num2: Second operand
+        operation: Type of operation ('add', 'subtract', 'multiply', 'divide')
         
-        result = perform_operation(num1, num2, operation)
-        
-        if isinstance(result, str) and "Error" in result:
-            print(f"Result: {result}")
-        else:
-            print(f"Result: {result:.1f}" if result.is_integer() else f"Result: {result}")
+    Returns:
+        Result of the operation or error message for division by zero
+    """
+    operation = operation.lower()  # Normalize input
     
-    except ValueError:
-        print("Invalid input! Please enter valid numbers.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-if __name__ == "__main__":
-    main()
+    if operation == 'add':
+        return num1 + num2
+    elif operation == 'subtract':
+        return num1 - num2
+    elif operation == 'multiply':
+        return num1 * num2
+    elif operation == 'divide':
+        if num2 == 0:
+            return "Error: Division by zero"
+        return num1 / num2
+    else:
+        raise ValueError("Invalid operation. Supported operations are: 'add', 'subtract', 'multiply', 'divide'")
